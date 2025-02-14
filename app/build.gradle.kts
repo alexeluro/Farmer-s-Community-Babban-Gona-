@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("androidx.room")
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.21"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
 }
 
 composeCompiler {
@@ -80,11 +81,14 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //Navigation
-    val nav_version = "2.8.6"
+    val nav_version = "2.8.7"
     implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
+
+    implementation(libs.androidx.lifecycle.runtime.compose)
 }
