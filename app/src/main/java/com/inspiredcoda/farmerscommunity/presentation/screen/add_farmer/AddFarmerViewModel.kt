@@ -45,7 +45,6 @@ class AddFarmerViewModel(
             _isLoading.value = true
             val validationResult = runInputValidations()
             if (!validationResult.isSuccess()) {
-                Log.d("XXXX::::", "validateFarmerInputs: Validation Failed")
                 _validationError.value = validationResult
                 _isLoading.value = false
                 return@launch
