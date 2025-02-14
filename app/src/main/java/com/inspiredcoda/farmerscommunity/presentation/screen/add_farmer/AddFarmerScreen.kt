@@ -29,17 +29,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.inspiredcoda.farmerscommunity.R
+import com.inspiredcoda.farmerscommunity.presentation.component.StatusScreen
 import com.inspiredcoda.farmerscommunity.presentation.component.TextInputWithLabel
 import com.inspiredcoda.farmerscommunity.presentation.ui.theme.FarmersCommunityTheme
 
@@ -85,10 +90,12 @@ fun AddFarmerScreenContainer(
 
     val snackBarHostState = SnackbarHostState()
 
+    var showDialog by remember { mutableStateOf(false) }
+
     LaunchedEffect(key1 = uiAction.value) {
         when (val action = uiAction.value) {
             AddFarmerViewModel.AddFarmerUiState.FarmerAdded -> {
-                navController.popBackStack()
+                showDialog = true
             }
 
             is AddFarmerViewModel.AddFarmerUiState.Error -> {
@@ -193,6 +200,23 @@ fun AddFarmerScreenContainer(
                         .height(24.dp)
                         .width(24.dp)
                 )
+            }
+
+            if (showDialog) {
+                Dialog(
+                    onDismissRequest = {
+                        showDialog = false
+                    },
+                    properties = DialogProperties(
+                        dismissOnClickOutside = false,
+                        dismissOnBackPress = false,
+                        usePlatformDefaultWidth = false
+                    )
+                ) {
+                    StatusScreen {
+                        navController.navigateUp()
+                    }
+                }
             }
         }
 

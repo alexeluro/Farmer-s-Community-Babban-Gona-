@@ -8,4 +8,6 @@
     <string name="last_name">Last name</string>
     <string name="crop_type">Crop type</string>
     <string name="save_and_continue">Save and Continue</string>
+    <string name="farmer_added_successfully">Farmer added \nsuccessfully</string>
+    <string name="you_have_successfully_added_a_farmer_see_farmer_list">You have successfully added a farmer. See farmer list.</string>
 </resources>
