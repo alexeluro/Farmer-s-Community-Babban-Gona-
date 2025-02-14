@@ -55,8 +55,7 @@ fun TextInputWithLabel(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 10.dp)
-                .clip(RoundedCornerShape(5.dp))
-            ,
+                .clip(RoundedCornerShape(5.dp)),
             value = value.value,
             onValueChange = onValueChange,
             shape = RoundedCornerShape(7.dp),
@@ -64,6 +63,7 @@ fun TextInputWithLabel(
                 unfocusedIndicatorColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent
             ),
+            singleLine = true,
             textStyle = MaterialTheme.typography.bodyMedium,
             keyboardOptions = KeyboardOptions.Default.copy(keyboardType = keyboardType),
             placeholder = {
@@ -80,10 +80,8 @@ fun TextInputWithLabel(
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
-            },
-
-            )
-
+            }
+        )
     }
 }
 
@@ -129,7 +127,7 @@ fun TextInputWithLabel(
                         .clip(RoundedCornerShape(5.dp))
                         .menuAnchor(),
                     value = value.value,
-                    onValueChange = {  },
+                    onValueChange = { },
                     shape = RoundedCornerShape(7.dp),
                     readOnly = true,
                     colors = ExposedDropdownMenuDefaults.textFieldColors().copy(
@@ -163,7 +161,7 @@ fun TextInputWithLabel(
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth()
-                    ){
+                    ) {
                         options.forEach { item ->
                             DropdownMenuItem(
                                 text = {
