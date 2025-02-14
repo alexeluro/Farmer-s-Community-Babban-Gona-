@@ -1,6 +1,5 @@
 package com.inspiredcoda.farmerscommunity.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -14,24 +13,22 @@ import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
-    secondary = PurpleGrey80,
+    secondary = Green,
     tertiary = Pink80,
-
-    background = Color.Black,
+    background = Gray100,
     onBackground = Color.White,
-    surface = gray100,
+    surface = Gray100,
     surfaceContainer = Color.Black,
     onSurface = Color.White
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
+    primary = Color.White,
+    secondary = Green,
     tertiary = Pink40,
-
-    background = Color.White,
+    background = LightBlue,
     onBackground = Color.Black,
-    surface = lightBlue,
+    surface = LightBlue,
     surfaceContainer = Color.White,
     onSurface = Color.Black
 
