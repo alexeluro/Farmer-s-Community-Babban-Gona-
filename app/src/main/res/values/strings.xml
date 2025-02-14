@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Farmer\'s Community</string>
+    <string name="farmers_community">Farmers\' Community</string>
+    <string name="add_farmer">Add Farmer</string>
+    <string name="no_farmers_found">No farmers found</string>
+    <string name="add_a_farmer">Add a Farmer</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="crop_type">Crop type</string>
+    <string name="save_and_continue">Save and Continue</string>
 </resources>
